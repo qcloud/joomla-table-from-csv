@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="1.0.0" method="upgrade" client="site">
+  <name>Qcloud CSV to HTML table</name>
+  <author>Quantumcloud.com</author>
+  	<creationDate>April 2013</creationDate>
+  <copyright>Attribution-Share Alike 3.0 United States</copyright>
+  <license>GNU/GPL: http://www.gnu.org/copyleft/gpl.html</license>
+  <authorEmail>info@quantumcloud.com</authorEmail>
+  <authorUrl>www.quantumcloud.com</authorUrl>
+  <version>1.0.1</version>
+  <description>Create and display usual HTML table in your joomla website from any CSV file .</description>
+  <files>
+    <filename module="mod_qcloud_csvtable">mod_qcloud_csvtable.php</filename>
+    <filename>csv_parser.php</filename>
+    <filename>table_sorter.js</filename>
+    <filename>tmp/index.html</filename>
+  </files>
+  <config>
+     <fields name="params">
+      <fieldset name="basic">
+        <field name="dcsvfile" type="text" default="" label="CSV URL" description="URL of the CSV file to be loaded" size="55" />
+        <field type="spacer" default="&lt;b&gt;Style parameters&lt;/b&gt;" />
+        <field name="sortable" type="radio" default="1" label="Sortable" description="Select whether you want the table to be sortable or not">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="tableid" type="text" default="table_from_csv" label="Table ID" description="" />
+        <field name="tablewidth" type="text" default="100%" label="Table Width" description="The width of the table" size="5" />
+        <field name="tablebgcolor" type="text" default="#BBB" label="Table Background Color" description="Table Background Color" size="5" />
+        <field name="tableheaderbgcolor" type="text" default="#EEE" label="TH Background Color" description="Table Header Background Color" size="5" />
+        <field name="tabledatabgcolor" type="text" default="#FFF" label="TD Background Color" description="Table Data Background Color" size="5" />
+        <field name="cellspacing" type="text" default="0" label="Cell Spacing" description="No CSS" size="5" />
+        <field name="cellpadding" type="text" default="0" label="Cell Padding" description="No CSS" size="5" />
+        <field name="border" type="text" default="0" label="Border Width" description="No CSS" size="5" />
+      </fieldset>
+      <fieldset name="advanced">
+        <field name="cache" type="radio" default="1" label="Enable Cache" description="Select whether to cache the content of the CSV. If you don't your website will get the CSV file each time it loads">
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </field>
+        <field name="cachetime" type="text" default="30" label="Cache Minutes" description="Maximum age in minutes of the  CSV to be storaged in cache" size="5" />
+      </fieldset>
+    </fields>
+  </config>
+</extension>
